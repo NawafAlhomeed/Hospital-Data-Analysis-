@@ -1,19 +1,16 @@
-# Project Title: Exploring Python's Capabilities with Pandas
+# Exploring Python's Capabilities with Pandas
 
 ## Overview
 
-This project is a personal exploration of Python's data manipulation capabilities using the pandas library. It is designed to showcase basic to intermediate pandas operations in a straightforward and accessible manner.
+This project is a personal exploration of pandas' capabilities in handling data. The data used is from Kaggle and has been pre-cleaned. The main aim is to demonstrate the ETL process and how to effectively use pandas for data transformation and analysis.
 
 ## Data Source
 
-The dataset used in this project is sourced from Kaggle. A link to the dataset is provided in the repository.
+The dataset is sourced from Kaggle. You can find the dataset \[here]\([insert link](https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset)).
 
-## Project Focus
+## What’s Included
 
-* **Python and Pandas**: The primary goal is to demonstrate how pandas can be used for data manipulation and analysis in a simple and clear way.
-* **Visualization with Power BI**: While pandas handles the data transformation, the visualization part will be done in Power BI for ease and simplicity.
+* A demonstration of the ETL process using pandas.
+* Data loading, transformation, and basic exploration steps.
 
-## Notes
 
-* The dataset is already cleaned and ready for analysis; no data cleaning steps are included.
-* This project is not structured as an educational tutorial but rather as a personal exploration.
