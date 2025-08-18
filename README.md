@@ -35,7 +35,3 @@ The dataset includes five tables: appointments, patients, doctors, treatments, a
 ## Conclusion
 
 This project is a great starting point for anyone looking to understand the power of Python in data engineering and the simplicity of Power BI for visualization.
-
----
-
-Let me know if you'd like any further tweaks!
