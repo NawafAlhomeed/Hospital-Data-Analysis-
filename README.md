@@ -6,7 +6,7 @@ This project is a personal exploration of pandas' capabilities in handling data.
 
 ## Data Source
 
-The dataset is sourced from Kaggle. You can find the dataset \\([here](https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset)).
+The dataset is sourced from Kaggle. You can find the dataset \([here](https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset)).
 
 ## What’s Included
 
