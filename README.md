@@ -1,35 +1,59 @@
-# Exploring Python's Capabilities with Pandas
+# Hospital Data Analysis — Portfolio-ready (Enhanced)
 
-## Overview
+**Author:** Nawaf Alhomeed  
+**Purpose:** Clean, transform and visualize hospital dataset; reproducible ETL and a Power BI/Streamlit demo.
 
-This project is a personal exploration of pandas' capabilities in handling data. The data used is from Kaggle and has been pre-cleaned. The main aim is to demonstrate the ETL process and how to effectively use pandas for data transformation and analysis.
+## What I changed (direct, no BS)
+- Converted notebook logic into a small `src/` package with a CLI.
+- Added reproducible environment files (`requirements.txt`, `requirements-dev.txt`).
+- Added unit test for core transformation logic.
+- Added GitHub Actions CI for tests, a Dockerfile, and a clear README + data handling instructions.
+- Added MIT license and a robust `.gitignore`.
 
-## Data Source
+## Quick start (run locally)
+1. Put your raw dataset files in `data/raw/` (see `data/README.md`).
+2. Create and activate a virtualenv:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+3. Run the pipeline:
+   ```bash
+   python -m hospital_etl.cli data/raw data/processed
+   ```
+   This creates cleaned CSVs under `data/processed/`.
 
-The dataset is sourced from Kaggle. You can find the dataset \([here](https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset)).
+4. Run tests:
+   ```bash
+   pip install -r requirements-dev.txt
+   pytest -q
+   ```
 
-This Jupyter Notebook is a demonstration of how a data engineer can use Python to prepare a hospital's data for analysis and visualization in another program like Power BI. This process is known as **ETL**, which stands for **Extract, Transform, Load**.
+## Project structure
+```
+Hospital-Data-Analysis-Enhanced/
+├─ LICENSE
+├─ README.md
+├─ requirements.txt
+├─ requirements-dev.txt
+├─ .github/workflows/ci.yml
+├─ src/hospital_etl/ (ETL package)
+├─ tests/
+├─ data/ (gitignored — put raw files in data/raw/)
+└─ Dockerfile
+```
 
-The notebook follows these steps:
+## Notes / Security
+- Do NOT commit raw patient data. Keep `data/` in `.gitignore`.
+- Confirm the dataset license (Kaggle or other) before publishing.
+- If dataset contains PHI, replace with synthetic/anonymized examples before sharing.
 
-### 1. Setup & Data Extraction
-The first part of the notebook sets up the necessary libraries, in this case, **pandas** for data manipulation and **os** for interacting with the operating system. It then extracts (reads) five different hospital data tables (patients, appointments, doctors, treatments, and billing) from CSV files into the notebook.
+## Next steps I recommend (high ROI)
+1. Add 2–3 dashboard screenshots to `docs/screenshots/` and embed in README.
+2. Convert a notebook to a reproducible `papermill` job and automate PDF builds in CI.
+3. Add a simple Streamlit demo and deploy to Streamlit Cloud for a live link.
 
-### 2. Data Transformation
-This is the core of the notebook, where the raw data is cleaned and transformed into a more useful format. The transformations include:
-* **Renaming columns** for clarity, such as changing "first_name" to "patient_name" in the patients' table.
-* **Changing data types**, for example, converting date columns from plain text to a proper datetime format so they can be used for calculations.
-* **Deriving new information** from existing data, such as:
-    * Calculating each patient's age from their date of birth.
-    * Creating new age groups (e.g., "Child," "Adult," "Senior") based on the calculated age.
-    * Flagging payments that are late by comparing the payment date to a newly created due date.
-* **Standardizing data**, like mapping single-letter gender codes ('M' and 'F') to full words ('Male' and 'Female').
-* **Handling data relationships**, which involves merging different tables together. For example, the `appointments` data is merged with the `patients` and `doctors` data to create a more comprehensive table.
-* **Answering business questions** by creating summary tables. The notebook calculates the total bill for each patient and identifies the top five doctors based on the number of unique patients they've seen.
-
-### 3. Data Loading
-The final step is to save the cleaned and transformed data into new CSV files. These files are now ready to be loaded into Power BI for creating reports and dashboards.
-
-By separating the transformation process from the visualization, the notebook demonstrates an efficient workflow where Python handles the complex data preparation and Power BI focuses on creating the final visuals for business intelligence.
-
-
+---  
+Done. Download the prepared repo zip from the link below and commit to your GitHub.
