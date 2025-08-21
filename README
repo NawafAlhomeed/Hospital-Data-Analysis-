@@ -1,0 +1,33 @@
+Exploring Python's Capabilities with Pandas
+Overview
+This project is a personal exploration of pandas' capabilities in handling data. The data used is from Kaggle and has been pre-cleaned. The main aim is to demonstrate the ETL process and how to effectively use pandas for data transformation and analysis.
+
+Data Source
+The dataset is sourced from Kaggle. You can find the dataset (here).
+
+What’s Included
+A demonstration of the ETL process using pandas.
+Data loading, transformation, and basic exploration steps.
+This Jupyter Notebook is a demonstration of how a data engineer can use Python to prepare a hospital's data for analysis and visualization in another program like Power BI. This process is known as ETL, which stands for Extract, Transform, Load.
+
+The notebook follows these steps:
+
+1. Setup & Data Extraction
+The first part of the notebook sets up the necessary libraries, in this case, pandas for data manipulation and os for interacting with the operating system. It then extracts (reads) five different hospital data tables (patients, appointments, doctors, treatments, and billing) from CSV files into the notebook.
+
+2. Data Transformation
+This is the core of the notebook, where the raw data is cleaned and transformed into a more useful format. The transformations include:
+
+Renaming columns for clarity, such as changing "first_name" to "patient_name" in the patients' table.
+Changing data types, for example, converting date columns from plain text to a proper datetime format so they can be used for calculations.
+Deriving new information from existing data, such as:
+Calculating each patient's age from their date of birth.
+Creating new age groups (e.g., "Child," "Adult," "Senior") based on the calculated age.
+Flagging payments that are late by comparing the payment date to a newly created due date.
+Standardizing data, like mapping single-letter gender codes ('M' and 'F') to full words ('Male' and 'Female').
+Handling data relationships, which involves merging different tables together. For example, the appointments data is merged with the patients and doctors data to create a more comprehensive table.
+Answering business questions by creating summary tables. The notebook calculates the total bill for each patient and identifies the top five doctors based on the number of unique patients they've seen.
+3. Data Loading
+The final step is to save the cleaned and transformed data into new CSV files. These files are now ready to be loaded into Power BI for creating reports and dashboards.
+
+By separating the transformation process from the visualization, the notebook demonstrates an efficient workflow where Python handles the complex data preparation and Power BI focuses on creating the final visuals for business intelligence.
