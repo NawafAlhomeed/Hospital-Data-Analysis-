@@ -1,33 +1,48 @@
-Exploring Python's Capabilities with Pandas
-Overview
-This project is a personal exploration of pandas' capabilities in handling data. The data used is from Kaggle and has been pre-cleaned. The main aim is to demonstrate the ETL process and how to effectively use pandas for data transformation and analysis.
+# Hospital Data Analysis (ETL with Python + Power BI)
 
-Data Source
-The dataset is sourced from Kaggle. You can find the dataset (here).
+This project demonstrates how a data engineer can use Python to prepare hospital data for analysis and visualization in **Power BI**.  
+It focuses on the **ETL process** — Extract, Transform, Load — turning raw hospital data into business-ready insights.
 
-What’s Included
-A demonstration of the ETL process using pandas.
-Data loading, transformation, and basic exploration steps.
-This Jupyter Notebook is a demonstration of how a data engineer can use Python to prepare a hospital's data for analysis and visualization in another program like Power BI. This process is known as ETL, which stands for Extract, Transform, Load.
+⚠️ Note: The dataset is **not included** in this repository. Please download it directly from Kaggle (link below).
 
-The notebook follows these steps:
+---
 
-1. Setup & Data Extraction
-The first part of the notebook sets up the necessary libraries, in this case, pandas for data manipulation and os for interacting with the operating system. It then extracts (reads) five different hospital data tables (patients, appointments, doctors, treatments, and billing) from CSV files into the notebook.
+## Dataset
+The hospital dataset is publicly available here:  
+[Hospital Management Dataset – Kaggle](https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset)
 
-2. Data Transformation
-This is the core of the notebook, where the raw data is cleaned and transformed into a more useful format. The transformations include:
+---
 
-Renaming columns for clarity, such as changing "first_name" to "patient_name" in the patients' table.
-Changing data types, for example, converting date columns from plain text to a proper datetime format so they can be used for calculations.
-Deriving new information from existing data, such as:
-Calculating each patient's age from their date of birth.
-Creating new age groups (e.g., "Child," "Adult," "Senior") based on the calculated age.
-Flagging payments that are late by comparing the payment date to a newly created due date.
-Standardizing data, like mapping single-letter gender codes ('M' and 'F') to full words ('Male' and 'Female').
-Handling data relationships, which involves merging different tables together. For example, the appointments data is merged with the patients and doctors data to create a more comprehensive table.
-Answering business questions by creating summary tables. The notebook calculates the total bill for each patient and identifies the top five doctors based on the number of unique patients they've seen.
-3. Data Loading
-The final step is to save the cleaned and transformed data into new CSV files. These files are now ready to be loaded into Power BI for creating reports and dashboards.
+## Process Overview
 
-By separating the transformation process from the visualization, the notebook demonstrates an efficient workflow where Python handles the complex data preparation and Power BI focuses on creating the final visuals for business intelligence.
+### 1. Extract
+- Load multiple CSV files (`patients`, `appointments`, `doctors`, `treatments`, `billing`) into **pandas**.
+
+### 2. Transform
+- Clean and standardize the data:
+  - Rename columns for clarity.  
+  - Convert text fields (e.g., dates) into proper types.  
+  - Derive new features (age, age groups, late payments).  
+  - Standardize values (e.g., gender codes → "Male"/"Female").  
+  - Merge tables to show patient-doctor-appointment relationships.  
+  - Generate summary insights (e.g., total bill per patient, top doctors).  
+
+### 3. Load
+- Save the transformed data as new CSV files.  
+- These files can be imported into **Power BI** to create reports and dashboards.  
+
+---
+
+## How to Use
+1. Download the dataset from Kaggle.  
+2. Place the CSV files in a folder named `data/`.  
+3. Open `analysis.ipynb` in Jupyter Notebook.  
+4. Run the notebook step by step to see the ETL process.  
+5. Use the transformed CSVs in **Power BI** for visualization.  
+
+---
+
+## Tools Used
+- **Python (pandas)** → ETL / Data Cleaning  
+- **Jupyter Notebook** → Workflow  
+- **Power BI** → Visualization  
